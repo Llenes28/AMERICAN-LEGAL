@@ -1085,6 +1085,31 @@
             .member-photo:hover .member-info {
                 bottom: 0; /* Muestra el texto al pasar el cursor */
             }
+            .team-image-link {
+            display: block;
+            max-width: 800px; /* Ancho máximo de la imagen */
+            margin: 2rem auto 0 auto; /* Centra la imagen */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .team-image-link:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .team-image-link img {
+            width: 100%;
+            display: block; /* Elimina espacio extra debajo de la imagen */
+        }
+
+        .team-detail-page {
+            /* Estilos para la página de detalle del equipo */
+            background-color: var(--light-bg);
+            padding-bottom: 6rem;
+        }
         </style>
     </head>
     <body>
@@ -1133,46 +1158,33 @@
             </div>
             <div class="service-card penal">
                 <div class="service-header">
-                    <h3>Consultoría en Materias Penales</h3>
+                    <h3>Consultoría en legal</h3>
                 </div>
                 <div class="service-content">
                     <p>Ofrecemos asesoría experta en materias penales: evaluación de riesgos jurídicos, elaboración de estrategias de defensa, acompañamiento en diligencias y representación ante instancias judiciales.</p>
                     <a href="#" class="service-link" data-service="penal">Ver detalles</a>
                 </div>
             </div>
-            
-            <!-- Servicio modificado: SOL DE CONFLICTOS CIVILES -->
-            <div class="service-card civil">
-                <div class="service-header">
-                    <h3>Solución de Conflictos Civiles</h3>
-                </div>
-                <div class="service-content">
-                    <p>Resolución efectiva de disputas en el ámbito civil a través de asesoría legal especializada, negociación, mediación y representación judicial cuando sea necesario.</p>
-                    <a href="#" class="service-link" data-service="civil">Ver detalles</a>
-                </div>
-            </div>
-            
-            <!-- Servicio modificado: MATERIA NOTARIAL Y REGISTRAL -->
-            <div class="service-card notarial">
-                <div class="service-header">
-                    <h3>Materia Notarial y Registral</h3>
-                </div>
-                <div class="service-content">
-                    <p>Asesoría integral en trámites notariales, registrales y de legalización de documentos para garantizar la validez jurídica de sus actos y contratos.</p>
-                    <a href="#" class="service-link" data-service="notarial">Ver detalles</a>
-                </div>
-            </div>
     </section>
        <!-- Sección de Equipo -->
         <section class="team-section" id="teamSection">
             <h2 class="section-title">Nuestro Equipo de Abogados</h2>
-            <div class="team-grid">
+            
+            <a href="#" id="viewTeamDetailBtn" class="team-image-link">
+                <img src="imagenes/equipo-portada.jpg" alt="Conoce a nuestro equipo legal">
+            </a>
+        </section>
+        <section id="teamDetail" class="service-detail team-detail-page">
+            
+            <h2 class="section-title" style="padding-top: 8rem; margin-bottom: 3.5rem;">Nuestro Equipo</h2>
+            
+            <div class="team-grid" style="max-width: 900px; margin: 0 auto 4rem auto;">
                 <div class="team-member">
                     <div class="member-photo">
-                        <img src="imagenes/gordillo.png" alt="Nombre Abogado 1">
+                        <img src="imagenes/KENNY.png" alt="Nombre Abogado 1">
                         <div class="member-info">
-                            <h3>Nombre Abogado 1</h3>
-                            <p>Socio - Especialidad en Derecho Penal</p>
+                            <h3>Dr. Kenny Soto Palomino</h3>
+                            <p>Socio - Especialidad en Civil y comercial</p>
                         </div>
                     </div>
                 </div>
@@ -1187,9 +1199,9 @@
                 </div>
                 <div class="team-member">
                     <div class="member-photo">
-                        <img src="imagenes/gordillo.png" alt="Nombre Abogado 3">
+                        <img src="imagenes/jerry.png" alt="Nombre Abogado 3">
                         <div class="member-info">
-                            <h3>jerry "el gordillo jurídico"</h3>
+                            <h3>Dr. Jerry Ñaupari Huaylla</h3>
                             <p>Socio - Especialidad en Derecho Administrativo</p>
                         </div>
                     </div>
@@ -1213,7 +1225,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+            </section>
          <!-- Sección de Clientes -->
             <section class="clients-section" id="clientsSection" style="display: none;">
             <h2 class="section-title">Próximamente</h2>
@@ -1253,7 +1265,6 @@
      </section>
 
     <section id="penal" class="service-detail penal" id="service1">
-        <div class="back-btn" id="backBtn"><i class="fas fa-arrow-left"></i> Volver a servicios</div>
         <div class="service-hero">
             <div class="service-hero-content">
                 <h2>Consultoría en Materias Penales</h2>
@@ -1274,7 +1285,7 @@
                 <li>Defensa de víctimas en procesos penales</li>
             </ul>
             
-            <p>Nuestros abogados penalistas cuentan con amplia experiencia en litigación y una tasa de éxito del 92% en casos complejos. Trabajamos con absoluta confidencialidad y dedicación para lograr los mejores resultados.</p>
+            <p>Nuestros abogados penalistas cuentan con amplia experiencia en litigación y una tasa de éxito en casos complejos. Trabajamos con absoluta confidencialidad y dedicación para lograr los mejores resultados.</p>
             
             <div class="reserva-container">
                 <button class="reserva-btn" id="reservaBtn2">Haz una reserva</button>
@@ -1282,91 +1293,48 @@
         </div>
     </section>
     
-    <!-- Detalle para SOLUCIÓN DE CONFLICTOS CIVILES -->
-    <section id="civil" class="service-detail civil" id="service2">
-        <div class="back-btn"><i class="fas fa-arrow-left"></i> Volver a servicios</div>
-        <div class="service-hero">
-            <div class="service-hero-content">
-                <h2>SOLUCIÓN DE CONFLICTOS CIVILES</h2>
-                <p>Resolución efectiva de disputas en el ámbito civil a través de asesoría legal especializada.</p>
+    <div class="contact-modal" id="contactModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Contáctenos</h2>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" class="form-control" required placeholder="Ingrese su nombre">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" class="form-control" required placeholder="Ingrese su correo">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Número de teléfono</label>
+                        <input type="tel" id="phone" class="form-control" required placeholder="Ingrese su teléfono">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Servicio de interés</label>
+                        <select id="service" class="form-control">
+                            <option value="">Seleccione un servicio</option>
+                            <option value="penal">Consultoría en Materias Penales</option>
+                            <option value="fedatario">Fedatario Digital</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Comentarios o consulta</label>
+                        <textarea id="message" class="form-control" required placeholder="Describa su consulta legal"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Enviar consulta</button>
+                </form>
             </div>
         </div>
-        <div class="service-content-section">
-            <p>Nuestro servicio de Solución de Conflictos Civiles está diseñado para brindar asesoría especializada en la resolución de disputas de naturaleza civil, incluyendo conflictos contractuales, de propiedad, familiares, sucesorios y de responsabilidad civil.</p>
-            
-            <p>Servicios que ofrecemos:</p>
-            <ul style="margin-left: 20px; margin-bottom: 1.5rem;">
-                <li>Asesoría y representación en procesos judiciales civiles</li>
-                <li>Negociación y mediación para solución extrajudicial de conflictos</li>
-                <li>Elaboración de acuerdos y transacciones</li>
-                <li>Recuperación de deudas y obligaciones</li>
-                <li>Conflictos de propiedad y posesión</li>
-                <li>Problemas contractuales (incumplimiento, resolución, etc.)</li>
-                <li>Asuntos de familia (divorcios, pensiones, régimen de visitas)</li>
-                <li>Procesos sucesorios (testamentos, herencias, legados)</li>
-            </ul>
-            
-            <p>Contamos con un equipo especializado en derecho civil que ha resuelto más de 300 casos en los últimos 3 años, garantizando soluciones efectivas y personalizadas para cada situación.</p>
-            
-            <div class="reserva-container">
-                <button class="reserva-btn">Haz una reserva</button>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Detalle para MATERIA NOTARIAL Y REGISTRAL -->
-    <section id="notarial" class="service-detail notarial" id="service3">
-        <div class="back-btn"><i class="fas fa-arrow-left"></i> Volver a servicios</div>
-        <div class="service-hero">
-            <div class="service-hero-content">
-                <h2>MATERIA NOTARIAL Y REGISTRAL</h2>
-                <p>Asesoría integral en trámites notariales, registrales y de legalización de documentos.</p>
-            </div>
-        </div>
-        <div class="service-content-section">
-        <p>Asesoría integral en trámites notariales, registrales y de legalización de documentos.</p>
-
-        <!-- Sub-cards: Fedatario Digital + Procesos No Contenciosos -->
-        
-            <a href="#" class="service-link card" data-service="procesosNoContenciosos" role="button" aria-controls="procesosNoContenciosos" style="width:calc(50% - .5rem);">
-            <div class="card-inner">
-                <h3>Procesos No Contenciosos Notariales</h3>
-                <p>Actuaciones instrumentales y registrales sin controversia judicial: inscripciones, protocolos, declaraciones y constataciones notariales.</p>
-            </div>
-            </a>
-        </div>
-        </div>
-    </section>
-    <section id="procesosNoContenciosos" class="service-detail" aria-hidden="true">
-
-  <div class="service-hero" style="background: url('imagenes/acta-notarial.jpg') center/cover no-repeat;">
-    <div class="service-hero-content">
-      <h2>Procesos No Contenciosos Notariales</h2>
-      <p>Actuaciones notariales y registrales de carácter no contencioso: inscripción, protocolización, constataciones y regularizaciones.</p>
     </div>
-  </div>
-
-  <div class="service-content-section">
-    <h3>Alcance</h3>
-    <ul>
-      <li>Protocolización de documentos privados y actas notariales.</li>
-      <li>Constataciones y actas de hechos.</li>
-      <li>Inscripciones y rectificaciones registrales de carácter no contencioso.</li>
-      <li>Legalización de firmas y certificaciones para uso nacional e internacional.</li>
-    </ul>
-
-    <h3>Requisitos habituales</h3>
-    <ul>
-      <li>DNI/Pasaporte de los intervinientes.</li>
-      <li>Documentos soporte (contratos, títulos, partidas).</li>
-      <li>Poderes legalizados si corresponde.</li>
-    </ul>
-
-    <div class="reserva-container">
-      <button class="reserva-btn">Haz una reserva</button>
-    </div>
-  </div>
-</section>
         <!-- Detalle del servicio Fedatario Digital -->
     
     
@@ -1448,8 +1416,6 @@
                 <h3>Áreas de práctica</h3>
                 <ul class="footer-links">
                     <li><a href="#" class="service-trigger" data-service="penal"><i class="fas fa-chevron-right"></i> Consultoría Penal</a></li>
-                    <li><a href="#" class="service-trigger" data-service="administrativo"><i class="fas fa-chevron-right"></i> Procesos Administrativos</a></li>
-                    <li><a href="#" class="service-trigger" data-service="civil"><i class="fas fa-chevron-right"></i> Derecho Civil</a></li>
                     <li><a href="#" class="service-trigger" data-service="fedatario"><i class="fas fa-chevron-right"></i> Fedatario Digital</a></li>
                 </ul>
             </div>
@@ -1471,297 +1437,196 @@
     </footer>
 
     <script>
-        // Funcionalidad para navegación entre servicios
-        const serviceLinks = document.querySelectorAll('.service-link');
-        const serviceDetails = document.querySelectorAll('.service-detail');
+        // --- INICIO DEL NUEVO SCRIPT ORGANIZADO ---
+
+        // 1. DEFINIR TODOS LOS ELEMENTOS IMPORTANTES
         const mainHero = document.getElementById('mainHero');
         const servicesSection = document.getElementById('services');
         const teamSection = document.getElementById('teamSection');
         const clientsSection = document.getElementById('clientsSection');
         const footer = document.querySelector('.footer');
-        const mainLogo = document.getElementById('mainLogo');
+        const serviceDetails = document.querySelectorAll('.service-detail');
+        const viewTeamDetailBtn = document.getElementById('viewTeamDetailBtn');
+        
+        // Links de Navegación
         const homeLink = document.getElementById('homeLink');
-        const backBtns = document.querySelectorAll('.back-btn');
+        const mainLogo = document.getElementById('mainLogo');
+        const footerHomeLink = document.getElementById('footerHomeLink');
+        const navServicesLink = document.querySelector('a[href="#services"]');
+        const footerServicesLink = document.getElementById('footerServicesLink');
+        
+        // Links de Equipo
+        const teamHeaderLink = document.getElementById('teamHeaderLink');
+        const teamFooterLink = document.getElementById('teamFooterLink');
+
+        // Links de Clientes ("Próximamente")
+        const clientsHeaderLink = document.getElementById('clientsHeaderLink');
+        const clientsFooterLink = document.getElementById('clientsFooterLink');
+
+        // Links de Detalles de Servicio
+        const serviceLinks = document.querySelectorAll('.service-link');
+        const serviceTriggers = document.querySelectorAll('.service-trigger');
+
+        // Links de Contacto y Modal
         const contactBtn = document.getElementById('contactBtn');
+        const reservaBtns = document.querySelectorAll('.reserva-btn');
         const contactModal = document.getElementById('contactModal');
         const closeModal = document.getElementById('closeModal');
         const contactForm = document.getElementById('contactForm');
-        const reservaBtns = document.querySelectorAll('.reserva-btn');
+        const contactNavLinks = document.querySelectorAll('a[href="#"]'); // Para los enlaces "Contacto"
+
+        // Header
         const header = document.querySelector('.header');
-        const navLinks = document.querySelectorAll('.nav-links a');
-        
-        // Configura los límites de palabras por campo
-        const wordLimits = {
-            name: 5,        // máximo 5 palabras
-            email: 1,       // solo 1 palabra (correo)
-            phone: 1,       // solo 1 palabra (número)
-            message:50    // máximo 50 palabras¿
-        };
 
-        // Función para contar palabras
-        function countWords(str){
-            if(!str) return 0;
-            return str.trim().split(/\s+/).filter(Boolean).length;
-        }
-
-        /* Validación en tiempo real (respetando wordLimits) */
-        Object.keys(wordLimits).forEach(id => {
-            const input = document.getElementById(id);
-            if(!input) return;
-            input.addEventListener('input', function(){
-                const max = wordLimits[id];
-                const parts = this.value.trim().split(/\s+/).filter(Boolean);
-                if(parts.length > max){
-                    this.value = parts.slice(0, max).join(' ');
-                    this.style.borderColor = 'red';
-                } else {
-                    this.style.borderColor = '';
-                }
-            });
-        });
-       /* Validación al enviar */
-if(contactForm){
-    contactForm.addEventListener('submit', function(e){
-        let valid = true;
-        let msg = '';
-        Object.keys(wordLimits).forEach(id => {
-            const input = document.getElementById(id);
-            if(input && countWords(input.value) > wordLimits[id]){
-                valid = false;
-                msg += `El campo "${input.previousElementSibling.textContent}" tiene un límite de ${wordLimits[id]} palabras.\n`;
-            }
-        });
-        if(!valid){
-            e.preventDefault();
-            alert(msg);
-            return;
-        }
-
-        // Si pasa validación, abrir WhatsApp
-        e.preventDefault();
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const service = document.getElementById('service').value.trim();
-        const message = document.getElementById('message').value.trim();
-        const whatsappNumber = '51963079322';
-        const text = `Consulta desde la web:\nNombre: ${name}\nCorreo: ${email}\nTeléfono: ${phone}\nServicio: ${service}\nMensaje: ${message}`;
-        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
-        contactForm.reset();
-        contactModal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    });
-}
-function hideAllMainSections(){
-    mainHero.style.display = 'none';
-    servicesSection.style.display = 'none';
-    teamSection.style.display = 'none';
-    clientsSection.style.display = 'none';
-    footer.style.display = 'none';
-    serviceDetails.forEach(d => d.classList.remove('active'));
-}
-
-function backToHome(){
-    mainHero.style.display = 'flex';
-    servicesSection.style.display = 'block';
-    teamSection.style.display = 'none';
-    clientsSection.style.display = 'none';
-    footer.style.display = 'block';
-    serviceDetails.forEach(d => d.classList.remove('active'));
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-        // Función para mostrar la sección de equipo
-        function showTeamSection() {
-            // Ocultar otras secciones
+        // 2. EL "GERENTE" DE SECCIONES
+        // Esta única función controla QUÉ se muestra y QUÉ se oculta.
+        function showPage(pageId) {
+            
+            // Primero, ocultar todo
             mainHero.style.display = 'none';
             servicesSection.style.display = 'none';
-            clientsSection.style.display = 'none';
-            footer.style.display = 'block';
-            
-            // Ocultar detalles de servicios
-            serviceDetails.forEach(detail => {
-                detail.classList.remove('active');
-            });
-            
-            // Mostrar equipo
-            teamSection.style.display = 'block';
-            
-            // Scroll al inicio
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        // Función para mostrar la sección de clientes
-            function showClientsSection() {
-                // Ocultar secciones principales
-                mainHero.style.display = 'none';
-                servicesSection.style.display = 'none';
-                teamSection.style.display = 'none';
-                footer.style.display = 'block';
-                
-                // Ocultar todos los detalles de servicio
-                serviceDetails.forEach(detail => {
-                    detail.classList.remove('active');
-                });
-                
-                // Mostrar la sección de clientes
-                clientsSection.style.display = 'block';
-                
-                // Scroll suave al inicio
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            }
-        function backToHome() {
-            mainHero.style.display = 'flex';
-            servicesSection.style.display = 'block';
             teamSection.style.display = 'none';
-            footer.style.display = 'block';
-            
-            serviceDetails.forEach(detail => {
-                detail.classList.remove('active');
+            clientsSection.style.display = 'none';
+            footer.style.display = 'none';
+            serviceDetails.forEach(d => d.classList.remove('active'));
+
+            // Segundo, mostrar la página solicitada
+            switch (pageId) {
+                case 'home':
+                    mainHero.style.display = 'flex';
+                    servicesSection.style.display = 'block';
+                    footer.style.display = 'block';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    break;
+                
+                case 'services':
+                    // Igual que 'home' pero con scroll a servicios
+                    mainHero.style.display = 'flex';
+                    servicesSection.style.display = 'block';
+                    footer.style.display = 'block';
+                    document.getElementById('services').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    break;
+
+                case 'team':
+                    teamSection.style.display = 'block';
+                    footer.style.display = 'block';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    break;
+                
+                case 'clients':
+                    clientsSection.style.display = 'block';
+                    footer.style.display = 'block';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    break;
+                
+                default:
+                    // Asumir que es un detalle de servicio (ej. 'penal', 'fedatario')
+                    const detail = document.getElementById(pageId);
+                    if (detail) {
+                        detail.classList.add('active'); // Esto muestra el detalle
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        // Si no se encuentra, ir a home
+                        showPage('home');
+                    }
+            }
+        }
+
+        // 3. ASIGNAR TAREAS (EVENT LISTENERS)
+
+        // Tarea: Mostrar "Home"
+        [homeLink, mainLogo, footerHomeLink].forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                showPage('home');
             });
-            
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        });
+
+        // Tarea: Mostrar "Home" y scrollear a Servicios
+        [navServicesLink, footerServicesLink].forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                showPage('services');
+            });
+        });
+
+        // Tarea: Mostrar Detalle de Equipo
+        if(viewTeamDetailBtn) {
+            viewTeamDetailBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                showPage('teamDetail'); // Llama al Gerente con el ID de la nueva sección
             });
         }
-        // Asignar eventos a los enlaces de Equipo
-        document.getElementById('teamHeaderLink').addEventListener('click', function(e) {
-            e.preventDefault();
-            showTeamSection();
+
+        // Tarea: Mostrar "Próximamente" (Clientes)
+        [clientsHeaderLink, clientsFooterLink].forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                showPage('clients');
+            });
         });
 
-        document.getElementById('teamFooterLink').addEventListener('click', function(e) {
-            e.preventDefault();
-            showTeamSection();
-        });
-        // Event listeners para equipo
-        document.getElementById('clientsHeaderLink').addEventListener('click', function(e) {
-            e.preventDefault();
-            showClientsSection();
-        });
-
-        document.getElementById('clientsFooterLink').addEventListener('click', function(e) {
-            e.preventDefault();
-            showClientsSection();
-        });
-        // Mostrar detalle de servicio
-        serviceLinks.forEach(link => {
+        // Tarea: Mostrar Detalle de Servicio
+        [...serviceLinks, ...serviceTriggers].forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const serviceId = link.getAttribute('data-service');
-                
-                // Ocultar secciones principales
-                mainHero.style.display = 'none';
-                servicesSection.style.display = 'none';
-                footer.style.display = 'none';
-                
-                // Mostrar el detalle del servicio seleccionado
-                document.getElementById(serviceId).classList.add('active');
+                showPage(serviceId);
             });
         });
-        // Selecciona todos los enlaces "Contacto" del header y footer
-        document.querySelectorAll('a').forEach(link => {
-            if (link.textContent.trim().toLowerCase().includes('contacto')) {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    contactModal.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                });
-            }
-        });
-        // Volver a la página principal
-        function backToHome() {
-            // Mostrar secciones principales
-            mainHero.style.display = 'flex';
-            servicesSection.style.display = 'block';
-            teamSection.style.display = 'none';
-            footer.style.display = 'block';
-            
-            // Ocultar todos los detalles de servicio
-            serviceDetails.forEach(detail => {
-                detail.classList.remove('active');
-            });
-        }
-        
-        backBtns.forEach(btn => {
-            btn.addEventListener('click', backToHome);
-        });
-        
-        mainLogo.addEventListener('click', (e) => {
-            e.preventDefault();
-            backToHome();
-        });
-        
-        homeLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            backToHome();
-        });
-        
-        // Funcionalidad para el modal de contacto
+
+        // 4. FUNCIONALIDAD DEL MODAL DE CONTACTO (Esto estaba bien)
+
         function openModal() {
             contactModal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
-        
-        contactBtn.addEventListener('click', openModal);
-        
-        reservaBtns.forEach(btn => {
-            btn.addEventListener('click', openModal);
-        });
-        
-        // Cerrar modal
-        closeModal.addEventListener('click', () => {
+
+        function closeModalFunc() {
             contactModal.classList.remove('active');
             document.body.style.overflow = 'auto';
-        });
+        }
+
+        // Tarea: Abrir Modal
+        contactBtn.addEventListener('click', openModal);
+        reservaBtns.forEach(btn => btn.addEventListener('click', openModal));
         
-        // Cerrar al hacer clic fuera del modal
-        contactModal.addEventListener('click', (e) => {
-            if (e.target === contactModal) {
-                contactModal.classList.remove('active');
-                document.body.style.overflow = 'auto';
+        // Los enlaces de "Contacto" en el menú
+        document.querySelectorAll('a').forEach(link => {
+            if (link.textContent.trim().toLowerCase().includes('contacto')) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openModal();
+                });
             }
         });
-        
-        // Enviar formulario
-       contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
 
-            // Obtén los valores del formulario
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const service = document.getElementById('service').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            // Número de WhatsApp (formato internacional, sin + ni espacios)
-            const whatsappNumber = '51963079322'; // Ejemplo: 51 (Perú) + número
-
-            // Construye el mensaje
-            const text = `Consulta desde la web:\nNombre: ${name}\nCorreo: ${email}\nTeléfono: ${phone}\nServicio: ${service}\nMensaje: ${message}`;
-
-            // Codifica el mensaje para URL
-            const encodedText = encodeURIComponent(text);
-
-            // Construye el enlace de WhatsApp
-            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
-
-            // Abre WhatsApp en una nueva pestaña
-            window.open(whatsappURL, '_blank');
-
-            // Opcional: Cierra el modal y limpia el formulario
-            contactForm.reset();
-            contactModal.classList.remove('active');
-            document.body.style.overflow = 'auto';
+        // Tarea: Cerrar Modal
+        closeModal.addEventListener('click', closeModalFunc);
+        contactModal.addEventListener('click', (e) => {
+            if (e.target === contactModal) {
+                closeModalFunc();
+            }
         });
+
+        // Tarea: Enviar formulario a WhatsApp
+        if(contactForm){
+            contactForm.addEventListener('submit', function(e){
+                e.preventDefault();
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const service = document.getElementById('service').value.trim();
+                const message = document.getElementById('message').value.trim();
+                const whatsappNumber = '51963079322';
+                const text = `Consulta desde la web:\nNombre: ${name}\nCorreo: ${email}\nTeléfono: ${phone}\nServicio: ${service}\nMensaje: ${message}`;
+                window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
+                contactForm.reset();
+                closeModalFunc();
+            });
+        }
         
-        // Cambiar header al hacer scroll
+        // 5. EFECTO SCROLL DEL HEADER (Esto estaba bien)
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
@@ -1769,255 +1634,6 @@ function backToHome(){
                 header.classList.remove('scrolled');
             }
         });
-        
-        // Navegación suave
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        // Función para mostrar el detalle de un servicio
-        function showServiceDetail(serviceId) {
-            // Ocultar secciones principales
-            mainHero.style.display = 'none';
-            servicesSection.style.display = 'none';
-            teamSection.style.display = 'none';
-            footer.style.display = 'none';
-
-            // Mostrar el detalle del servicio seleccionado
-            document.getElementById(serviceId).classList.add('active');
-            
-            // Desplazar al inicio de la página
-            window.scrollTo(0, 0);
-        }
-        function showClientsSection() {
-            mainHero.style.display = 'none';
-            servicesSection.style.display = 'none';
-            teamSection.style.display = 'none';
-            clientsSection.style.display = 'block'
-            footer.style.display = 'block';
-            
-            serviceDetails.forEach(detail => {
-                detail.classList.remove('active');
-            });
-        }
-        // Evento para los botones "Ver detalles" (ya existente)
-        serviceLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const serviceId = link.getAttribute('data-service');
-                showServiceDetail(serviceId);
-            });
-        });
-
-        // Evento para los enlaces de "Áreas de práctica"
-        const serviceTriggers = document.querySelectorAll('.service-trigger');
-        serviceTriggers.forEach(trigger => {
-            trigger.addEventListener('click', (e) => {
-                e.preventDefault();
-                const serviceId = trigger.getAttribute('data-service');
-                showServiceDetail(serviceId);
-            });
-        });
-        // Funcionalidad para navegación entre servicios
-        // Agregar evento al enlace de "Servicios"
-        const servicesLink = document.querySelector('a[href="#services"]');
-        servicesLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            backToHome(); // Llama a la función que muestra la sección principal
-        });
-        // Mostrar detalle de servicio
-        serviceLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const serviceId = link.getAttribute('data-service');
-                
-                // Ocultar secciones principales
-                mainHero.style.display = 'none';
-                servicesSection.style.display = 'none';
-                footer.style.display = 'none';
-                
-                // Mostrar el detalle del servicio seleccionado
-                document.getElementById(serviceId).classList.add('active');
-                /* === Handler limpio para abrir SOLO la ficha del subservicio === */
-serviceLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const svc = (link.dataset.service || '').trim(); // ej: "fedatario"
-    if (!svc) return;
-
-    // resolver id real del detalle (soporta "fedatario" o "fedatarioDetail")
-    let targetId = svc;
-    if (!document.getElementById(targetId)) {
-      if (document.getElementById(svc + 'Detail')) targetId = svc + 'Detail';
-      else if (document.getElementById(svc.toLowerCase())) targetId = svc.toLowerCase();
-    }
-
-    const detail = document.getElementById(targetId);
-    if (!detail) {
-      console.warn('No se encontró detalle para', targetId);
-      return;
-    }
-
-    // 1) identificar y ocultar SOLO el contenedor padre donde está la card
-    // buscamos el ancestor con clase .service-group (si existe)
-    const parentGroup = link.closest('.service-group') || document.getElementById('notarialSection') || document.getElementById('notarial');
-    if (parentGroup) parentGroup.style.display = 'none';
-
-    // 2) ocultar otras fichas detalle (solo para limpiar)
-    document.querySelectorAll('.service-detail').forEach(d => {
-      d.classList.remove('active');
-      d.style.display = 'none';
-      d.setAttribute('aria-hidden', 'true');
-    });
-
-    // 3) mostrar SOLO la ficha objetivo
-    detail.classList.add('active');
-    detail.style.display = 'block';
-    detail.setAttribute('aria-hidden', 'false');
-    // scroll suave
-    window.scrollTo({ top: Math.max(detail.offsetTop - 60, 0), behavior: 'smooth' });
-
-    // 4) asegurar que el botón "volver" de esta ficha restaure la vista padre
-    // (si ya hay un listener, lo dejamos; si no, lo añadimos)
-    const backBtn = detail.querySelector('.back-btn, .volver, .back-btn-button, [data-back]');
-    if (backBtn) {
-      // quitar listeners previos para evitar acumulación
-      const newBack = function(ev){
-        ev.preventDefault();
-        // ocultar detalle actual
-        detail.classList.remove('active');
-        detail.style.display = 'none';
-        detail.setAttribute('aria-hidden', 'true');
-        // mostrar nuevamente el parentGroup
-        if (parentGroup) parentGroup.style.display = '';
-        window.scrollTo({ top: Math.max((parentGroup ? parentGroup.offsetTop - 40 : 0), 0), behavior: 'smooth' });
-      };
-      backBtn.replaceWith(backBtn.cloneNode(true)); // eliminar listeners antiguos
-      const freshBack = detail.querySelector('.back-btn, .volver, .back-btn-button, [data-back]');
-      freshBack.addEventListener('click', newBack);
-    }
-  });
-});
-            });
-
-            
-        });
-        // Volver a la página principal
-        function backToHome() {
-            // Mostrar secciones principales
-            mainHero.style.display = 'flex';
-            servicesSection.style.display = 'block';
-            teamSection.style.display = 'block';
-            footer.style.display = 'block';
-            
-            // Ocultar todos los detalles de servicio
-            serviceDetails.forEach(detail => {
-                detail.classList.remove('active');
-            });
-        }
-        // Agregar evento al enlace de "Inicio" en el pie de página
-        const footerHomeLink = document.getElementById('footerHomeLink');
-        footerHomeLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            backToHome(); // Llama a la función que muestra la sección principal
-        });
-        // Agregar evento al enlace de "Servicios" en el pie de página
-        const footerServicesLink = document.getElementById('footerServicesLink');
-        footerServicesLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            backToHome(); // Llama a la función que muestra la sección principal
-            // Desplazar a la sección de servicios
-            window.scrollTo({
-                top: servicesSection.offsetTop,
-                behavior: 'smooth'
-            });
-        });
-// Mostrar detalle de servicio
-serviceLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const serviceId = link.getAttribute('data-service');
-        
-        // Ocultar secciones principales
-        mainHero.style.display = 'none';
-        servicesSection.style.display = 'none';
-        footer.style.display = 'none';
-        
-        // Mostrar el detalle del servicio seleccionado
-        document.getElementById(serviceId).classList.add('active');
-    });
-});
-
-// Volver a la página principal
-function backToHome() {
-    // Mostrar secciones principales
-    mainHero.style.display = 'flex';
-    servicesSection.style.display = 'block';
-    footer.style.display = 'block';
-    
-    // Ocultar todos los detalles de servicio
-    serviceDetails.forEach(detail => {
-        detail.classList.remove('active');
-    });
-}
-(function(){
-  const sel = 'a[href="#services"], a.nav-services, a[data-target="services"]';
-  document.querySelectorAll(sel).forEach(link => {
-    link.addEventListener('click', function(e){
-      e.preventDefault();
-
-      // 1) ocultar cualquier detalle abierto
-      document.querySelectorAll('.service-detail').forEach(d => {
-        d.classList.remove('active');
-        d.style.display = 'none';
-        d.style.minHeight = '';
-        d.setAttribute('aria-hidden','true');
-      });
-
-      // 2) forzar que los contenedores de servicios principales se muestren
-      const containers = document.querySelectorAll('.service-group, .services-grid, .service-cards, .services-section, #services, .services');
-      containers.forEach(c => {
-        if (!c) return;
-        c.style.display = '';        // quita cualquier inline display:none
-        c.style.minHeight = '';      // quita minHeight forzado
-        c.style.marginBottom = '';   // quita margin-bottom forzado
-      });
-
-      // 3) limpiar posibles paddings/height inline que causen gap (ej: .hero)
-      document.querySelectorAll('.hero, .service-hero, .service-content-section').forEach(el=>{
-        el.style.paddingTop = el.style.paddingTop || '';
-        el.style.height = el.style.height || '';
-        el.style.minHeight = el.style.minHeight || '';
-      });
-
-      // 4) scroll suave al contenedor real de servicios
-      const target = document.getElementById('services') 
-                   || document.querySelector('.services') 
-                   || document.querySelector('.service-group') 
-                   || document.querySelector('.services-grid');
-      if(target){
-        const offset = Math.max(target.offsetTop - 80, 0); // ajusta -80 si tu header es más alto
-        window.scrollTo({ top: offset, behavior: 'smooth' });
-        // foco por accesibilidad
-        setTimeout(()=>{ target.setAttribute('tabindex','-1'); target.focus(); }, 450);
-      } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    });
-  });
-})();
     </script>
 </body>
 </html>
